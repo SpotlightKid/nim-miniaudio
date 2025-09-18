@@ -8,9 +8,9 @@ audio engine, for the [Nim] programming language.
 # API
 
 The module provides access to whole miniaudio API via the [futhark] wrapper
-generator. This means, you can use the the same symbols as in C code, but
-Nim identifier naming and some futhark [symbol renaming rules] apply. For
-example, instead of `ma_device`, you can also use `maDevice` or `madevice`.
+generator. This means, you can use the same symbols as in C code, but Nim
+identifier naming and some futhark [symbol renaming rules] apply. For example,
+instead of `ma_device`, you can also use `maDevice` or `madevice`.
 
 The module also defines some high-level wrapper objects to provide an
 interface to some parts of the miniaudio API, bringing its use more in line
@@ -28,7 +28,7 @@ import std/rdstdin
 import miniaudio
 
 var engine = AudioEngine.new()
-var sound = loadSoundFromFile(engine, "test.wav")
+var sound = engine.loadSoundFromFile("test.wav")
 
 sound.looping = true
 sound.start()
